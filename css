@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    color: #fff;
+    background-color: #111;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #222;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+p {
+    margin: 20px 0;
+    line-height: 1.5;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e63946;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.about-section, .services-section, .testimonials-section, .gallery-section, .booking-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    width: 250px;
+    text-align: left;
+}
+
+.testimonial {
+    margin: 20px;
+}
+
+.gallery-images img {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.booking-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.booking-section label, .booking-section input {
+    margin: 10px 0;
+}
+
+.footer {
+    padding: 30px;
+    background-color: #222;
+    text-align: center;
+}
+
+.footer-logo {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #e63946;
+    margin: 0 10px;
+    text-decoration: none;
+}
