@@ -147,6 +147,55 @@
             padding: 2rem;
             font-size: 0.9rem;
         }
+        .gallery {
+            background-color: var(--accent-white);
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .gallery-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-black);
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-image {
+            min-width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .carousel-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .carousel-button {
+            background-color: var(--primary-black);
+            color: var(--accent-white);
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-button:hover {
+            background-color: var(--secondary-gray);
+        }
     </style>
 </head>
 <body>
@@ -167,7 +216,41 @@
             <a href="#" class="cta-button">Prenota Ora</a>
         </div>
     </section>
+    <section class="gallery">
+        <h2 class="gallery-title">I Nostri Lavori</h2>
+        <div class="carousel-container">
+            <div class="carousel" id="imageCarousel">
+                <img src="/barberzone/imm1.jpg" alt="Taglio 1" class="carousel-image">
+                <img src="/barberzone/imm2.jpg" alt="Taglio 2" class="carousel-image">
+                <img src="/barberzone/imm3.jpg" alt="Taglio 3" class="carousel-image">
+                <img src="/barberzone/imm4.jpg" alt="Taglio 4" class="carousel-image">
+            </div>
+        </div>
+        <div class="carousel-buttons">
+            <button class="carousel-button" onclick="moveCarousel(-1)">Precedente</button>
+            <button class="carousel-button" onclick="moveCarousel(1)">Successivo</button>
+        </div>
+    </section>
 
+    <script>
+        let currentSlide = 0;
+        const carousel = document.getElementById('imageCarousel');
+        const images = carousel.getElementsByClassName('carousel-image');
+
+        function moveCarousel(direction) {
+            currentSlide += direction;
+            
+            if (currentSlide >= images.length) {
+                currentSlide = 0;
+            }
+            if (currentSlide < 0) {
+                currentSlide = images.length - 1;
+            }
+
+            const offset = -currentSlide * 100;
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
     <section class="services">
         <div class="service-card">
             <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
