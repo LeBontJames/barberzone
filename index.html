@@ -2,105 +2,198 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BarberZone - Il tuo Stile</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>The Cut - Barbiere Uomo Moderno</title>
+    <style>
+        :root {
+            --primary-black: #121212;
+            --secondary-gray: #1E1E1E;
+            --accent-white: #F5F5F5;
+            --highlight-color: #3498db;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--accent-white);
+            line-height: 1.6;
+            color: var(--primary-black);
+        }
+
+        .navbar {
+            background-color: var(--primary-black);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .navbar:hover {
+            background-color: var(--secondary-gray);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-white);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--accent-white);
+            font-weight: 300;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--highlight-color);
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/api/placeholder/1600/900');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--accent-white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-white);
+            color: var(--primary-black);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 4rem 5%;
+            background-color: var(--accent-white);
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            width: 4rem;
+            height: 4rem;
+            margin: 0 auto 1rem;
+            color: var(--primary-black);
+        }
+
+        .footer {
+            background-color: var(--primary-black);
+            color: var(--accent-white);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <header class="hero-section">
-        <img src="logo.png" alt="BarberZone Logo" class="logo">
-        <h1>Benvenuto in BarberZone</h1>
-        <p>Il tuo spazio per lo stile autentico e il grooming maschile.</p>
-        <a href="#booking" class="cta-button">Prenota il Tuo Appuntamento</a>
-    </header>
+    <nav class="navbar">
+        <div class="logo">THE CUT</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Servizi</a></li>
+            <li><a href="#">Prenotazioni</a></li>
+            <li><a href="#">Contatti</a></li>
+        </ul>
+    </nav>
 
-    <!-- About Us Section -->
-    <section class="about-section" id="about">
-        <h2>L'Arte del Taglio Maschile</h2>
-        <p>Da BarberZone, non ci limitiamo a tagliare i capelli. Creiamo esperienze, trasformiamo look e valorizziamo il tuo stile unico. Con tecniche tradizionali e moderne, ti offriamo un servizio di qualità che unisce cura e stile.</p>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services-section" id="services">
-        <h2>I Nostri Servizi</h2>
-        <div class="service-cards">
-            <div class="service-card">
-                <h3>Taglio Classico</h3>
-                <p>Un taglio tradizionale con un tocco moderno, perfetto per ogni occasione.</p>
-            </div>
-            <div class="service-card">
-                <h3>Rasatura a Lama</h3>
-                <p>Vivi l’esperienza autentica di una rasatura tradizionale con lama.</p>
-            </div>
-            <div class="service-card">
-                <h3>Regolazione della Barba</h3>
-                <p>Per una barba curata e modellata, secondo il tuo stile.</p>
-            </div>
-            <div class="service-card">
-                <h3>Trattamenti Personalizzati</h3>
-                <p>Prodotti di alta qualità per capelli e barba, per prendersi cura della tua immagine.</p>
-            </div>
-        </div>
-        <a href="#booking" class="cta-button">Vedi tutti i servizi</a>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials-section" id="testimonials">
-        <h2>Cosa dicono di noi i nostri clienti</h2>
-        <div class="testimonial">
-            <p>"Servizio impeccabile, ottima atmosfera!"</p>
-            <span>- Marco R.</span>
-        </div>
-        <div class="testimonial">
-            <p>"Il miglior barbiere della città!"</p>
-            <span>- Luca B.</span>
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Il tuo stile, la tua identità</h1>
+            <p class="hero-subtitle">Trasformiamo i capelli in arte. Ogni taglio è un capolavoro su misura per te.</p>
+            <a href="#" class="cta-button">Prenota Ora</a>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery-section" id="gallery">
-        <h2>Il Nostro Stile</h2>
-        <div class="gallery-images">
-            <img src="style1.jpg" alt="Stile 1">
-            <img src="style2.jpg" alt="Stile 2">
-            <img src="style3.jpg" alt="Stile 3">
+    <section class="services">
+        <div class="service-card">
+            <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+            </svg>
+            <h3>Tagli Personalizzati</h3>
+            <p>Ogni taglio è unico, progettato per esaltare la tua personalità.</p>
+        </div>
+        <div class="service-card">
+            <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+            </svg>
+            <h3>Esperti del Settore</h3>
+            <p>Professionisti con anni di esperienza nel grooming maschile.</p>
+        </div>
+        <div class="service-card">
+            <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <h3>Appuntamenti Veloci</h3>
+            <p>Prenota online e ottieni il tuo taglio nel tempo che ti serve.</p>
         </div>
     </section>
 
-    <!-- Booking Section -->
-    <section class="booking-section" id="booking">
-        <h2>Prenota la tua esperienza</h2>
-        <p>Scegli l'orario che preferisci e prenota il tuo appuntamento con uno dei nostri esperti barbieri.</p>
-        <form action="#" method="POST">
-            <label for="date">Data:</label>
-            <input type="date" id="date" name="date" required>
-            <label for="time">Orario:</label>
-            <input type="time" id="time" name="time" required>
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="phone">Telefono:</label>
-            <input type="tel" id="phone" name="phone" required>
-            <button type="submit" class="cta-button">Prenota Ora</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
     <footer class="footer">
-        <img src="logo.png" alt="BarberZone Logo" class="footer-logo">
-        <div class="footer-links">
-            <a href="#about">Chi Siamo</a>
-            <a href="#services">Servizi</a>
-            <a href="#testimonials">Testimonianze</a>
-            <a href="#booking">Prenotazioni</a>
-            <a href="#contact">Contatti</a>
-        </div>
-        <div class="footer-contact">
-            <p>Indirizzo: Via del Salone, 10</p>
-            <p>Telefono: +39 123 456 789</p>
-            <p>Email: info@barberzone.com</p>
-            <p>Orari: Lunedì - Sabato, 9:00 - 19:00</p>
-        </div>
+        <p>&copy; 2024 THE CUT - Barbiere Uomo. Tutti i diritti riservati.</p>
     </footer>
 </body>
 </html>
